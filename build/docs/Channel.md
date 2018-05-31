@@ -8,7 +8,8 @@ title: Channel
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **ConnectUri** | **string** |  | [optional] |
-| **Id** | **string** | The channel identifier. | [optional] |
+| **Id** | **string** |  | [optional] |
+| **Expires** | **DateTime?** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
 {: class="table table-striped"}
 
 

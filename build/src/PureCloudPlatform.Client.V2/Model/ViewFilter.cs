@@ -99,6 +99,12 @@ namespace PureCloudPlatform.Client.V2.Model
         
         
         
+        
+        
+        
+        
+        
+        
         /// <summary>
         /// Gets or Sets Directions
         /// </summary>
@@ -182,6 +188,56 @@ namespace PureCloudPlatform.Client.V2.Model
         
         
         
+        /// <summary>
+        /// Gets or Sets MessageTypes
+        /// </summary>
+        [JsonConverter(typeof(UpgradeSdkEnumConverter))]
+        public enum MessageTypesEnum
+        {
+            /// <summary>
+            /// Your SDK version is out of date and an unknown enum value was encountered. 
+            /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
+            /// in the Package Manager Console
+            /// </summary>
+            [EnumMember(Value = "OUTDATED_SDK_VERSION")]
+            OutdatedSdkVersion,
+            
+            /// <summary>
+            /// Enum Sms for "sms"
+            /// </summary>
+            [EnumMember(Value = "sms")]
+            Sms,
+            
+            /// <summary>
+            /// Enum Twitter for "twitter"
+            /// </summary>
+            [EnumMember(Value = "twitter")]
+            Twitter,
+            
+            /// <summary>
+            /// Enum Line for "line"
+            /// </summary>
+            [EnumMember(Value = "line")]
+            Line,
+            
+            /// <summary>
+            /// Enum Facebook for "facebook"
+            /// </summary>
+            [EnumMember(Value = "facebook")]
+            Facebook
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -242,7 +298,15 @@ namespace PureCloudPlatform.Client.V2.Model
         
         
         
+        /// <param name="SkillGroups">The skill groups used to filter the view.</param>
+        
+        
+        
         /// <param name="LanguageIds">The language ids are used to filter the view.</param>
+        
+        
+        
+        /// <param name="LanguageGroups">The language groups used to filter the view.</param>
         
         
         
@@ -286,7 +350,7 @@ namespace PureCloudPlatform.Client.V2.Model
         
         
         
-        /// <param name="DurationMilliseconds">The duration is used to filter the view.</param>
+        /// <param name="DurationsMilliseconds">The durations in milliseconds used to filter the view.</param>
         
         
         
@@ -317,8 +381,24 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <param name="Abandoned">Indicates filtering for abandons.</param>
         
         
-        public ViewFilter(List<MediaTypesEnum> MediaTypes = null, List<string> QueueIds = null, List<string> SkillIds = null, List<string> LanguageIds = null, List<DirectionsEnum> Directions = null, List<string> WrapUpCodes = null, List<string> DnisList = null, List<string> UserIds = null, List<string> AddressTos = null, List<string> AddressFroms = null, List<string> OutboundCampaignIds = null, List<string> OutboundContactListIds = null, List<string> ContactIds = null, List<string> AniList = null, NumericRange DurationMilliseconds = null, NumericRange EvaluationScore = null, NumericRange EvaluationCriticalScore = null, List<string> EvaluationFormIds = null, List<string> EvaluatedAgentIds = null, List<string> EvaluatorIds = null, bool? Transferred = null, bool? Abandoned = null)
+        
+        /// <param name="MessageTypes">The message media types used to filter the view.</param>
+        
+        
+        public ViewFilter(List<MediaTypesEnum> MediaTypes = null, List<string> QueueIds = null, List<string> SkillIds = null, List<string> SkillGroups = null, List<string> LanguageIds = null, List<string> LanguageGroups = null, List<DirectionsEnum> Directions = null, List<string> WrapUpCodes = null, List<string> DnisList = null, List<string> UserIds = null, List<string> AddressTos = null, List<string> AddressFroms = null, List<string> OutboundCampaignIds = null, List<string> OutboundContactListIds = null, List<string> ContactIds = null, List<string> AniList = null, List<NumericRange> DurationsMilliseconds = null, NumericRange EvaluationScore = null, NumericRange EvaluationCriticalScore = null, List<string> EvaluationFormIds = null, List<string> EvaluatedAgentIds = null, List<string> EvaluatorIds = null, bool? Transferred = null, bool? Abandoned = null, List<MessageTypesEnum> MessageTypes = null)
         {
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             
             
             
@@ -440,7 +520,25 @@ this.SkillIds = SkillIds;
             
             
             
+this.SkillGroups = SkillGroups;
+            
+            
+            
+            
+            
+            
+            
+            
 this.LanguageIds = LanguageIds;
+            
+            
+            
+            
+            
+            
+            
+            
+this.LanguageGroups = LanguageGroups;
             
             
             
@@ -539,7 +637,7 @@ this.AniList = AniList;
             
             
             
-this.DurationMilliseconds = DurationMilliseconds;
+this.DurationsMilliseconds = DurationsMilliseconds;
             
             
             
@@ -607,6 +705,15 @@ this.Abandoned = Abandoned;
             
             
             
+            
+            
+            
+            
+this.MessageTypes = MessageTypes;
+            
+            
+            
+            
         }
         
         
@@ -639,11 +746,29 @@ this.Abandoned = Abandoned;
         
         
         /// <summary>
+        /// The skill groups used to filter the view
+        /// </summary>
+        /// <value>The skill groups used to filter the view</value>
+        [DataMember(Name="skillGroups", EmitDefaultValue=false)]
+        public List<string> SkillGroups { get; set; }
+        
+        
+        
+        /// <summary>
         /// The language ids are used to filter the view
         /// </summary>
         /// <value>The language ids are used to filter the view</value>
         [DataMember(Name="languageIds", EmitDefaultValue=false)]
         public List<string> LanguageIds { get; set; }
+        
+        
+        
+        /// <summary>
+        /// The language groups used to filter the view
+        /// </summary>
+        /// <value>The language groups used to filter the view</value>
+        [DataMember(Name="languageGroups", EmitDefaultValue=false)]
+        public List<string> LanguageGroups { get; set; }
         
         
         
@@ -738,11 +863,11 @@ this.Abandoned = Abandoned;
         
         
         /// <summary>
-        /// The duration is used to filter the view
+        /// The durations in milliseconds used to filter the view
         /// </summary>
-        /// <value>The duration is used to filter the view</value>
-        [DataMember(Name="durationMilliseconds", EmitDefaultValue=false)]
-        public NumericRange DurationMilliseconds { get; set; }
+        /// <value>The durations in milliseconds used to filter the view</value>
+        [DataMember(Name="durationsMilliseconds", EmitDefaultValue=false)]
+        public List<NumericRange> DurationsMilliseconds { get; set; }
         
         
         
@@ -808,6 +933,15 @@ this.Abandoned = Abandoned;
         public bool? Abandoned { get; set; }
         
         
+        
+        /// <summary>
+        /// The message media types used to filter the view
+        /// </summary>
+        /// <value>The message media types used to filter the view</value>
+        [DataMember(Name="messageTypes", EmitDefaultValue=false)]
+        public List<MessageTypesEnum> MessageTypes { get; set; }
+        
+        
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -823,7 +957,11 @@ this.Abandoned = Abandoned;
             
             sb.Append("  SkillIds: ").Append(SkillIds).Append("\n");
             
+            sb.Append("  SkillGroups: ").Append(SkillGroups).Append("\n");
+            
             sb.Append("  LanguageIds: ").Append(LanguageIds).Append("\n");
+            
+            sb.Append("  LanguageGroups: ").Append(LanguageGroups).Append("\n");
             
             sb.Append("  Directions: ").Append(Directions).Append("\n");
             
@@ -845,7 +983,7 @@ this.Abandoned = Abandoned;
             
             sb.Append("  AniList: ").Append(AniList).Append("\n");
             
-            sb.Append("  DurationMilliseconds: ").Append(DurationMilliseconds).Append("\n");
+            sb.Append("  DurationsMilliseconds: ").Append(DurationsMilliseconds).Append("\n");
             
             sb.Append("  EvaluationScore: ").Append(EvaluationScore).Append("\n");
             
@@ -860,6 +998,8 @@ this.Abandoned = Abandoned;
             sb.Append("  Transferred: ").Append(Transferred).Append("\n");
             
             sb.Append("  Abandoned: ").Append(Abandoned).Append("\n");
+            
+            sb.Append("  MessageTypes: ").Append(MessageTypes).Append("\n");
             
             sb.Append("}\n");
             return sb.ToString();
@@ -913,9 +1053,19 @@ this.Abandoned = Abandoned;
                     this.SkillIds.SequenceEqual(other.SkillIds)
                 ) &&
                 (
+                    this.SkillGroups == other.SkillGroups ||
+                    this.SkillGroups != null &&
+                    this.SkillGroups.SequenceEqual(other.SkillGroups)
+                ) &&
+                (
                     this.LanguageIds == other.LanguageIds ||
                     this.LanguageIds != null &&
                     this.LanguageIds.SequenceEqual(other.LanguageIds)
+                ) &&
+                (
+                    this.LanguageGroups == other.LanguageGroups ||
+                    this.LanguageGroups != null &&
+                    this.LanguageGroups.SequenceEqual(other.LanguageGroups)
                 ) &&
                 (
                     this.Directions == other.Directions ||
@@ -968,9 +1118,9 @@ this.Abandoned = Abandoned;
                     this.AniList.SequenceEqual(other.AniList)
                 ) &&
                 (
-                    this.DurationMilliseconds == other.DurationMilliseconds ||
-                    this.DurationMilliseconds != null &&
-                    this.DurationMilliseconds.Equals(other.DurationMilliseconds)
+                    this.DurationsMilliseconds == other.DurationsMilliseconds ||
+                    this.DurationsMilliseconds != null &&
+                    this.DurationsMilliseconds.SequenceEqual(other.DurationsMilliseconds)
                 ) &&
                 (
                     this.EvaluationScore == other.EvaluationScore ||
@@ -1006,6 +1156,11 @@ this.Abandoned = Abandoned;
                     this.Abandoned == other.Abandoned ||
                     this.Abandoned != null &&
                     this.Abandoned.Equals(other.Abandoned)
+                ) &&
+                (
+                    this.MessageTypes == other.MessageTypes ||
+                    this.MessageTypes != null &&
+                    this.MessageTypes.SequenceEqual(other.MessageTypes)
                 );
         }
 
@@ -1030,8 +1185,14 @@ this.Abandoned = Abandoned;
                 if (this.SkillIds != null)
                     hash = hash * 59 + this.SkillIds.GetHashCode();
                 
+                if (this.SkillGroups != null)
+                    hash = hash * 59 + this.SkillGroups.GetHashCode();
+                
                 if (this.LanguageIds != null)
                     hash = hash * 59 + this.LanguageIds.GetHashCode();
+                
+                if (this.LanguageGroups != null)
+                    hash = hash * 59 + this.LanguageGroups.GetHashCode();
                 
                 if (this.Directions != null)
                     hash = hash * 59 + this.Directions.GetHashCode();
@@ -1063,8 +1224,8 @@ this.Abandoned = Abandoned;
                 if (this.AniList != null)
                     hash = hash * 59 + this.AniList.GetHashCode();
                 
-                if (this.DurationMilliseconds != null)
-                    hash = hash * 59 + this.DurationMilliseconds.GetHashCode();
+                if (this.DurationsMilliseconds != null)
+                    hash = hash * 59 + this.DurationsMilliseconds.GetHashCode();
                 
                 if (this.EvaluationScore != null)
                     hash = hash * 59 + this.EvaluationScore.GetHashCode();
@@ -1086,6 +1247,9 @@ this.Abandoned = Abandoned;
                 
                 if (this.Abandoned != null)
                     hash = hash * 59 + this.Abandoned.GetHashCode();
+                
+                if (this.MessageTypes != null)
+                    hash = hash * 59 + this.MessageTypes.GetHashCode();
                 
                 return hash;
             }

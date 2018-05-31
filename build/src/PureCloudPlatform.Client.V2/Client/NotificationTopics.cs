@@ -57,6 +57,7 @@ namespace PureCloudPlatform.Client.V2.Client
               {"v2.users.{id}.alerting.heartbeat.rules", typeof(HeartBeatRuleNotification)},
               {"v2.users.{id}.alerting.interactionstats.alerts", typeof(InteractionStatAlertNotification)},
               {"v2.users.{id}.alerting.interactionstats.rules", typeof(InteractionStatRuleNotification)},
+              {"v2.users.{id}.analytics.reporting.exports", typeof(DataExportNotificationNotification)},
               {"v2.users.{id}.badges.chats", typeof(ChatBadgeNotification)},
               {"v2.users.{id}.callforwarding", typeof(CallForwardingNotification)},
               {"v2.users.{id}.conversations", typeof(ConversationNotification)},
@@ -86,6 +87,7 @@ namespace PureCloudPlatform.Client.V2.Client
               {"v2.users.{id}.workforcemanagement.timeoffrequests", typeof(TimeOffRequestUpdateNotification)},
               {"v2.workforcemanagement.agents", typeof(WfmMoveAgentsCompleteNotification)},
               {"v2.workforcemanagement.managementunits.{id}.agents.sync", typeof(WfmUpdateAgentDetailsCompleteNotification)},
+              {"v2.workforcemanagement.managementunits.{id}.schedules", typeof(WfmScheduleNotificationNotification)},
             };
         }
     }
